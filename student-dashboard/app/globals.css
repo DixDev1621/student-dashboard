@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #07070b;
+  color: #e5e7eb;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1f2c;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a3a;
+}
+
+/* Subtle dotted background */
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Card */
+.tile {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(21, 21, 31, 0.9), rgba(14, 14, 20, 0.9));
+  border: 1px solid #1f1f2c;
+  overflow: hidden;
+}
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 0%), rgba(139, 92, 246, 0.08), transparent 40%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
